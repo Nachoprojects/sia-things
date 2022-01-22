@@ -1,9 +1,11 @@
 #!/bin/bash
 # Sia host price pinning script
 #
-# First: Change the last line to your correct siac path
+# First: Change set siac path
 # To use: run script with ./set-bandwidth-price.sh PRICE
 #
+
+sia_path=""
 
 if [ "$#" -ne 1 ]; then
     echo "Missing price argument, run with "./set-bandwidth-price.sh PRICE""
@@ -28,4 +30,4 @@ current_kraken_price=$(echo "$current_kraken_price_raw" | tr -d '"')
 sc_tb=$(echo "$input_usd / $current_kraken_price" | bc)
 
 # Set host configuration
-/path/to//sia/siac host config mindownloadbandwidthprice ${sc_tb}SC
+$sia_path/siac host config mindownloadbandwidthprice ${sc_tb}SC
