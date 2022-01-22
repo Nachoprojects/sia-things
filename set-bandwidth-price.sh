@@ -1,5 +1,5 @@
 #!/bin/bash
-# Sia host price pinning script
+# Sia host bandwidth price pinning script
 #
 # First: set siac path
 # To use: run script with ./set-bandwidth-price.sh PRICE
