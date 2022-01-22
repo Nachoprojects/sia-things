@@ -1,11 +1,16 @@
 #!/bin/bash
 # Sia host price pinning script
 #
-# First: Change set siac path
+# First: set siac path
 # To use: run script with ./set-bandwidth-price.sh PRICE
 #
 
 sia_path=""
+
+if [ -z ${sia_path} ]; then
+    echo "Set your sia path variable, example "/opt/sia""
+    exit 1
+fi
 
 if [ "$#" -ne 1 ]; then
     echo "Missing price argument, run with "./set-bandwidth-price.sh PRICE""
